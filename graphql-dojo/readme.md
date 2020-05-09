@@ -49,3 +49,38 @@ GraphQL is platform agnostic
 
 Graphiql will be used for testing graphql endpoints.
 
+#### video 4
+
+This video is about starting Graphiql.
+
+This is an example of a graphql query
+
+```graphql
+{
+  books {
+    name
+    genre
+    id
+  }
+}
+```
+
+Another example of getting relational data with a query
+
+```graphql
+{
+  books {
+    name
+    genre
+    author {
+      name
+      age
+    }
+  }
+}
+```
+
+GraphQL is a query language, it is not JavaScript
+
+
+
