@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=Y0lDGjwRYKw&list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1
 
 ### notes from videos:
 
-#### 1st video
+#### video 1
 
 Frontend will be react js
 
@@ -16,5 +16,19 @@ What is graphql:
 
 It is a poweful query language used between the front-end and server.
 
+#### video 2
 
+This video is about an overview of GraphQL
 
+A rest api make looks like this:
+
+| Action              | Endpoint               |
+| ------------------- | ---------------------- |
+| Get all books       | domain.com/books       |
+| Get a single book   | domain.com/books/:id   |
+| Get all authors     | domain.com/authors     |
+| Get a single author | domain.com/authors/:id |
+
+GraphQL would look like this:
+
+<img src="doc-images/graphql-diagram.png" width="450" title="GraphQL Diagram">
