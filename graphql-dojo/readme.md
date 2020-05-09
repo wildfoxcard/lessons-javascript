@@ -142,3 +142,63 @@ const BookType = new GraphQLObjectType({
   }),
 });
 ```
+
+#### video 8
+
+This video is about root queries. They are the entry points to the graph.
+
+We added RootQuery to the schema.js file
+
+```javascript
+const graphql = require("graphql");
+
+const { GraphQLObjectType, GraphQlString, GraphQlSchema } = graphql;
+
+const BookType = new GraphQLObjectType({
+  name: "Book",
+  fields: () => ({
+    id: { type: GraphQlString },
+    name: { type: GraphQlString },
+    genre: { type: GraphQlString },
+  }),
+});
+
+const RootQuery = new GraphQLObjectType({
+  name: "RootQueryType",
+  fields: {
+    book: {
+      type: BookType,
+      args: { id: { type: GraphQlString } },
+      resolve(parent, args) {
+        // args.id because we defined id
+        // code to get data from db
+      },
+    },
+  },
+});
+
+console.log("RootQuery", RootQuery);
+
+//how the query will look:
+// book(id: "123") {
+//     name
+//     genre
+// }
+
+modules.exports = new GraphQlSchema({
+  query: RootQuery,
+});
+```
+
+This was added to the app.js file created in an earlier video
+
+```javascript
+const schema = require("./schema/schema");
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+  })
+);
+```
