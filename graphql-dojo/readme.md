@@ -32,3 +32,20 @@ A rest api make looks like this:
 GraphQL would look like this:
 
 <img src="doc-images/graphql-diagram.png" width="450" title="GraphQL Diagram">
+
+
+#### video 3
+
+This is video is about our project structure.
+
+backend:
+1) Node.js - Express App as GraphQl Server
+2) Database - MongoDB on mLab
+
+frontend:
+1) React App - using Apollo
+
+GraphQL is platform agnostic
+
+Graphiql will be used for testing graphql endpoints.
+
