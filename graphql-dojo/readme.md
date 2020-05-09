@@ -131,14 +131,14 @@ This video is about creating a graphql schema
 ```javascript
 const graphql = require("graphql");
 
-const { GraphQLObjectType, GraphQlString } = graphql;
+const { GraphQLObjectType, GraphQLString } = graphql;
 
 const BookType = new GraphQLObjectType({
   name: "Book",
   fields: () => ({
-    id: { type: GraphQlString },
-    name: { type: GraphQlString },
-    genre: { type: GraphQlString },
+    id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    genre: { type: GraphQLString },
   }),
 });
 ```
@@ -152,14 +152,14 @@ We added RootQuery to the schema.js file
 ```javascript
 const graphql = require("graphql");
 
-const { GraphQLObjectType, GraphQlString, GraphQlSchema } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQlSchema } = graphql;
 
 const BookType = new GraphQLObjectType({
   name: "Book",
   fields: () => ({
-    id: { type: GraphQlString },
-    name: { type: GraphQlString },
-    genre: { type: GraphQlString },
+    id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    genre: { type: GraphQLString },
   }),
 });
 
@@ -168,7 +168,7 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     book: {
       type: BookType,
-      args: { id: { type: GraphQlString } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
         // args.id because we defined id
         // code to get data from db
@@ -217,7 +217,7 @@ Dummy data was created and the resolve is used to search the dummy data using lo
 const graphql = require("graphql");
 const _ = require("lodash");
 
-const { GraphQLObjectType, GraphQlString, GraphQLSchema } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
 
 //dummy data
 var books = [
@@ -229,9 +229,9 @@ var books = [
 const BookType = new GraphQLObjectType({
   name: "Book",
   fields: () => ({
-    id: { type: GraphQlString },
-    name: { type: GraphQlString },
-    genre: { type: GraphQlString },
+    id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    genre: { type: GraphQLString },
   }),
 });
 
@@ -240,7 +240,7 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     book: {
       type: BookType,
-      args: { id: { type: GraphQlString } },
+      args: { id: { type: GraphQLString } },
       resolve(parent, args) {
         // args.id because we defined id
         // code to get data from db
@@ -260,3 +260,37 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
 });
 ```
+
+#### Video 10
+
+This video is about testing queries in Graphiql
+
+Using http://localhost:4000/graphql now will result in the following error:
+
+```json
+{ "errors": [{ "message": "Must provide query string." }] }
+```
+
+We need a tool to interact with this endpoint.
+
+In the app.js we need to add the graphiql tool:
+
+```JavaScript
+app.use('/graphql', graphqlHTTP({
+    schema,
+    graphiql: true
+}));
+```
+
+Now if I go to http://localhost/graphql I will see this tool:
+
+<img src="doc-images/graphiql.png" width="450" title="GraphQL Diagram">
+
+There is a exporer on the right to view rootQueryType
+
+<img src="doc-images/graphiql-rootquerytype.png" width="450" title="GraphQL Diagram">
+
+All strings must be double quote, no single quotes.
+
+<img src="doc-images/graphiql-book-firstsearch.png" width="450" title="GraphQL Diagram">
+
