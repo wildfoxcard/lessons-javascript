@@ -33,17 +33,18 @@ GraphQL would look like this:
 
 <img src="doc-images/graphql-diagram.png" width="450" title="GraphQL Diagram">
 
-
 #### video 3
 
 This is video is about our project structure.
 
 backend:
-1) Node.js - Express App as GraphQl Server
-2) Database - MongoDB on mLab
+
+1. Node.js - Express App as GraphQl Server
+2. Database - MongoDB on mLab
 
 frontend:
-1) React App - using Apollo
+
+1. React App - using Apollo
 
 GraphQL is platform agnostic
 
@@ -101,26 +102,43 @@ npm i express-graphql
 How we installed on our app.js express app
 
 ```javascript
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
+const express = require("express");
+const graphqlHTTP = require("express-graphql");
 
 const app = express();
 
-app.use('/graphql', graphqlHTTP({
-    
-}));
+app.use("/graphql", graphqlHTTP({}));
 
 app.listen(4000, () => {
-    console.log('now listening for request on port 4000')
+  console.log("now listening for request on port 4000");
 });
 ```
 
 connecting to http://localhost:4000/graphql has this error
 
 ```json
-{"errors":[{"message":"GraphQL middleware options must contain a schema."}]}
+{
+  "errors": [{ "message": "GraphQL middleware options must contain a schema." }]
+}
 ```
 
 The schema is missing.
 
+#### video 7
 
+This video is about creating a graphql schema
+
+```javascript
+const graphql = require("graphql");
+
+const { GraphQLObjectType, GraphQlString } = graphql;
+
+const BookType = new GraphQLObjectType({
+  name: "Book",
+  fields: () => ({
+    id: { type: GraphQlString },
+    name: { type: GraphQlString },
+    genre: { type: GraphQlString },
+  }),
+});
+```
