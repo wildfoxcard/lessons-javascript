@@ -86,4 +86,41 @@ GraphQL is a query language, it is not JavaScript
 
 This video was creating a simple express app in the new server folder.
 
+#### video 6
+
+This video is about connecting graphql to our new express app.
+
+```bash
+npm i graphql
+```
+
+```bash
+npm i express-graphql
+```
+
+How we installed on our app.js express app
+
+```javascript
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+
+const app = express();
+
+app.use('/graphql', graphqlHTTP({
+    
+}));
+
+app.listen(4000, () => {
+    console.log('now listening for request on port 4000')
+});
+```
+
+connecting to http://localhost:4000/graphql has this error
+
+```json
+{"errors":[{"message":"GraphQL middleware options must contain a schema."}]}
+```
+
+The schema is missing.
+
 
