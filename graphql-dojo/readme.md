@@ -82,5 +82,8 @@ Another example of getting relational data with a query
 
 GraphQL is a query language, it is not JavaScript
 
+#### video 5
+
+This video was creating a simple express app in the new server folder.
 
 
