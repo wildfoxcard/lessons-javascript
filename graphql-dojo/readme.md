@@ -804,3 +804,9 @@ We are using mongoose
 npm i mongoose
 ```
 
+#### video 17
+
+This video is about setting up mongo schemas using mongoose. I am not adding any notes because it has nothing to do with GraphQL.
+
+
+
