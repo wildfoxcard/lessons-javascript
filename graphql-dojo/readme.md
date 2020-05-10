@@ -793,3 +793,14 @@ How these two queries work
   }
 }
 ```
+
+#### video 16
+
+This video is about adding mongo through mLab, I will be using mongo server on my machine.
+
+We are using mongoose
+
+```bash
+npm i mongoose
+```
+
