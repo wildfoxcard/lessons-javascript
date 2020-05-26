@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
-import { getAuthorsQuery, addBookMutation } from '../queries/queries'
+import { getAuthorsQuery, addBookMutation, getBooksQuery } from '../queries/queries'
 import { flowRight as compose } from 'lodash';
 
 export class AddBook extends Component {
@@ -32,12 +32,16 @@ export class AddBook extends Component {
     submitForm(e) {
         e.preventDefault();
 
+
         this.props.addBookMutation({
             variables: {
                 name: this.state.name,
                 genre: this.state.genre,
                 authorId: this.state.authorId
-            }
+            },
+            refetchQueries:[{
+                query: getBooksQuery
+            }]
         });
     }
 
