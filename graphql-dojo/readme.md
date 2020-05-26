@@ -1388,6 +1388,9 @@ The new folder client as been created.
 create-react-app client
 ```
 
+#### video 24
+
+This video is about creating the first component. Book List Component
 
 
 
