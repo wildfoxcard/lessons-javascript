@@ -2029,3 +2029,7 @@ export class BookList extends Component {
 
 export default graphql(getBooksQuery)(BookList);
 ```
+
+#### video 36
+
+This video is about adding css to the app.
