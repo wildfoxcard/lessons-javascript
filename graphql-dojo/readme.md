@@ -1574,3 +1574,11 @@ export class AddBook extends Component {
 
 export default graphql(getAuthorsQuery)(AddBook);
 ```
+
+#### video 29
+
+This video is about external query files.
+
+This means to move the query out of the component
+
+Look in the queries folder.
