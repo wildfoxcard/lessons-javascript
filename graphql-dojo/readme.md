@@ -1378,6 +1378,16 @@ mutation {
 
 This video is about adding a react front-end to the applications. React will be using Apollo for GraphQL. This video is an overview of the front end.
 
+#### video 23
+
+This video is about creating a react app for a client for the graphql server.
+
+The new folder client as been created.
+
+```bash
+create-react-app client
+```
+
 
 
 
