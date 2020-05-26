@@ -1924,3 +1924,7 @@ export default compose(
   graphql(addBookMutation, { name: "addBookMutation" })
 )(AddBook);
 ```
+
+#### video 34
+
+This video is about a book detail component. This video was about setting up the getBookQuery in the queries file and creating a book detail component
