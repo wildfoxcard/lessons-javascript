@@ -1399,7 +1399,7 @@ This video is about using apollo as the client for graphql.
 https://www.apollographql.com/docs/react/get-started/
 
 ```bash
-nnpm install apollo-boost @apollo/react-hooks graphql
+nnpm install apollo-boost @apollo/react-hooks react-apollo graphql
 ```
 
 Plus installing the react hooks. This seems to be the legency way but it will work for the video playlist
@@ -1429,4 +1429,47 @@ function App() {
 }
 
 export default App;
+```
+
+#### video 26
+
+This video is about making queries from react.
+
+server requires cors
+
+```bash
+npm i cors --save
+```
+
+client updates in BookList.js:
+
+```jsx
+import React, { Component } from "react";
+import { gql } from "apollo-boost";
+import { graphql } from "react-apollo";
+
+const getBooksQuery = gql`
+  {
+    books {
+      name
+      id
+    }
+  }
+`;
+
+export class BookList extends Component {
+  render() {
+    console.log(this.props);
+
+    return (
+      <div>
+        <ul id="book-list">
+          <li>Book Name</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default graphql(getBooksQuery)(BookList);
 ```
