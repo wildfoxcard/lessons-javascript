@@ -29,6 +29,7 @@ export class BookList extends Component {
     }
 
     render() {
+        console.log('data', this.props)
         return (
             <div>
                 <ul id="book-list">
