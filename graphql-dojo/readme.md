@@ -1392,6 +1392,41 @@ create-react-app client
 
 This video is about creating the first component. Book List Component
 
+#### video 25
 
+This video is about using apollo as the client for graphql.
 
+https://www.apollographql.com/docs/react/get-started/
 
+```bash
+nnpm install apollo-boost @apollo/react-hooks graphql
+```
+
+Plus installing the react hooks. This seems to be the legency way but it will work for the video playlist
+
+```jsx
+import React from "react";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+
+// components
+import BookList from "./components/BookList";
+
+//apollo client setup
+const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql",
+});
+
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <div className="main">
+        <h1>Ninja's Reading List</h1>
+        <BookList />
+      </div>
+    </ApolloProvider>
+  );
+}
+
+export default App;
+```
