@@ -42,3 +42,28 @@ new routes:
 /auth/login
 /auth/logout
 /auth/google
+
+#### video 5
+
+This video is about setting up passport
+
+```bash
+npm i passport passport-google-oauth20
+```
+
+A basic outline of the passport-setup file was created
+
+```javascript
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20");
+
+passport.use(
+  new GoogleStrategy({
+    //options for the google strat
+  }),
+  () => {
+    //passport callback function
+  }
+);
+```
+
