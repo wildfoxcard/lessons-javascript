@@ -1,4 +1,4 @@
-# GraphQL - Dojo
+# GraphQL - Net Ninja
 
 from youtube playlist:
 
