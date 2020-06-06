@@ -12,4 +12,6 @@ Introduction into OAuth.
 
 #### video 2
 
+This video is about a deeper analysis into OAuth.
 
+<img src="doc-images/oauth-big-picture.png" />
