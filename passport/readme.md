@@ -71,6 +71,9 @@ passport.use(
 
 This video is about setting up the google strategy.
 
+important link:
+https://console.developers.google.com/
+
 ```javascript
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
@@ -87,3 +90,6 @@ passport.use(
 );
 ```
 
+#### video 7
+
+This video is about storing the keys in a file that isn't commited to github. I am following along, but I recommend using a .env file in the future.
